@@ -25,7 +25,7 @@ contract Friends is ERC721Burnable {
         notary = _notary;
     }
 
-    function forward() public {
+    function sweep() public {
         (bool success, ) = manager.call{value: address(this).balance}('');
         require(success, 'Transfer failed.');
     }

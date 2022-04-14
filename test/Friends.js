@@ -59,11 +59,11 @@ describe('Friends', () => {
     });
 
 
-    it('collects and forwards donations', async () => {
+    it('collects and sweeps donations', async () => {
         const uri = tokenURIs[1];
         const sig = await getSignature(uri, notary);
         await contract.connect(minterA).mint(uri, sig, { value: 100000000 });
-        await expect(await contract.connect(minterA).forward()).to.changeEtherBalance(manager, 200000000);
+        await expect(await contract.connect(minterA).sweep()).to.changeEtherBalance(manager, 200000000);
         tokens++;
     });
 
