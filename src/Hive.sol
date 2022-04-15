@@ -4,13 +4,13 @@ import 'openzeppelin-solidity/contracts/cryptography/ECDSA.sol';
 
 pragma solidity 0.6.12;
 
-contract Friends is ERC721Burnable {
+contract Hive is ERC721Burnable {
     address private manager;
     address private notary;
     uint256 private tokenID;
     mapping(bytes => bool) signatures;
 
-    constructor(address _notary) public ERC721('FRIENDS', 'Friends') {
+    constructor(address _notary) public ERC721('HIVE', 'Hive') {
         manager = _msgSender();
         notary = _notary;
     }

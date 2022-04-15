@@ -7,11 +7,11 @@ import {
 } from 'ethereum-waffle';
 
 import fs from 'fs';
-const Friends = JSON.parse(fs.readFileSync('./build/Friends.json'));
+const Hive = JSON.parse(fs.readFileSync('./build/Hive.json'));
 
 use(solidity);
 
-describe('Friends', () => {
+describe('Hive', () => {
     const tokenURIs = [
         'https://example.com/foo.json',
         'https://example.com/bar.json',
@@ -40,7 +40,7 @@ describe('Friends', () => {
     };
 
     it('deploys the contract', async () => {
-        contract = await deployContract(manager, Friends, [ notary.address ]);
+        contract = await deployContract(manager, Hive, [ notary.address ]);
     });
 
     it('mints an NFT on the contract', async () => {
